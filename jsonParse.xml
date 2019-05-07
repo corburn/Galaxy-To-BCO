@@ -1,0 +1,22 @@
+<tool id="Workflow_to_BCO" name="Convert Galaxy workflow to BCO" version="0.1.0">
+  <description>Convert Galaxy workflow to BCO</description>
+  <command interpreter="python">jsonParse.py $input $output </command>
+  <inputs>
+    <param format="json" name="input" type="data" label="Galaxy workflow file"/>
+  </inputs>
+  <outputs>
+    <data format="json" name="output" type="data" label="Biological Compute Object" />
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="input" value="Galaxy-Workflow-Metagenomics_Pipeline.json"/>
+      <output name="out_file1" file="galaxyOut.json"/>
+    </test>
+  </tests>
+
+  <help>
+This tool converts a Galaxy workflow to a Biological Compute Object (BCO).
+  </help>
+
+</tool>
