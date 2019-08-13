@@ -1,0 +1,61 @@
+﻿BCO Field Name,HistoryFile,field,Notes
+"    ""bco_id"": """",",NA,Default/option,should be a url. Maybe for the history file?
+"    ""bco_spec_version"": ""file:/Users/hadley/GitHub/bco-schema/biocomputeobject.json"",",NA,Default/option,user defined
+"    ""checksum"": """",",?,?,Maybe we could use the UUID for Galaxy history fileand the url?
+"    ""provenance_domain"": {",###############,###############,
+"        ""name"": """",",history_attrs.txt,name,
+"        ""version"": """",",NA,user input/coice?,user input
+"        ""review"": [],",NA,?,user input
+"        ""derived_from"": """",",NA,,
+"        ""obsolete_after"": """",",NA,,
+"        ""embargo"": {",###############,###############,
+"            ""start_time"": """",",NA,,
+"            ""end_time"": """"",NA,,
+"        },",###############,###############,
+"        ""created"": """",",history_attrs.txt,create_time,
+"        ""modified"": """",",history_attrs.txt,update_time,
+"        ""contributors"": [],",###############,###############,
+name,user/information,Public name,
+orcid,Na,,user input
+affiliation,Na,,user input
+email,user/information,Email address,
+"        ""license"": """"",NA,User input/coice?,
+"    },",###############,###############,
+"    ""usability_domain"": [],",history_attrs.txt,annotation,Mybe include a blurb about what is disirable here…
+"    ""extension_domain"": [],",NA,?,
+"    ""description_domain"": {",###############,###############,
+"        ""keywords"": [],",history_attrs.txt,tags,
+"        ""xref"": [],",?,?,
+"        ""platform"": [],",NA,Galaxy/auto?,
+"        ""pipeline_steps"": []",datasets/Galaxy-Workflow-Workflow_constructed_from_history__**.py,jsonParse-workflow.py,use the script already in hand to do this…
+"    },",###############,###############,
+"    ""execution_domain"": {",###############,###############,
+"        ""script"": [],",Link to history zip file? ,,
+"        ""script_driver"": """",",Galaxy?,,
+"        ""software_prerequisites"": [],",,,
+"                ""name""",Galaxy-Workflow-Workflow_constructed_from_history__**.py,steps.#.name,"if the ""steps.#.type"" is a tool OR not a ""data_input""?"
+"                ""version"":",Galaxy-Workflow-Workflow_constructed_from_history__**.py,steps.#.tool_version,"if the ""steps.#.type"" is a tool OR not a ""data_input""?"
+"                    ""access_time",,,
+"                    ""uri",Galaxy-Workflow-Workflow_constructed_from_history__**.py,tool_id,
+,,,
+,,,
+"        ""external_data_endpoints"": [],",jobs_attrs.json,params.files.ftp_files ,
+"        ""environment_variables"": {}",,,
+"    },",###############,###############,
+"    ""parametric_domain"": [],",,,
+"    ""io_domain"": {",,,
+"        ""input_subdomain"": [],",,,
+"                    ""access_time"":  ",,,
+"                    ""uri"": ",,,
+"                    ""filename"":",,,
+"        ""output_subdomain"": []",,,
+"                ""mediatype""",,,
+"                    ""access_time"":  ",,,
+"                    ""uri"": ",,,
+"                    ""filename"":",,,
+"    },",###############,###############,
+"    ""error_domain"": {",,,
+"        ""empirical_error"": {},",,,
+"        ""algorithmic_error"": {}",,,
+    },###############,###############,
+},###############,###############,

@@ -1,0 +1,157 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Workflow constructed from history 'BCO Test'", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "o580507-shortReads_1.fastq"
+                }
+            ], 
+            "label": null, 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 10, 
+                "top": 10
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"o580507-shortReads_1.fastq\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "uuid": "b5d60ee1-9bf9-4029-b2f1-5805d9055f6b", 
+            "workflow_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "o580507-shortReads_2.fastq"
+                }
+            ], 
+            "label": null, 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 10, 
+                "top": 130
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"o580507-shortReads_2.fastq\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "uuid": "5ce73641-4473-4434-a62d-a1b77bb283c8", 
+            "workflow_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 2, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "NC_004102.fasta"
+                }
+            ], 
+            "label": null, 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 10, 
+                "top": 250
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"NC_004102.fasta\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "uuid": "f07829cc-04c4-4219-826d-997d4ff1209b", 
+            "workflow_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.3.4.2", 
+            "errors": null, 
+            "id": 3, 
+            "input_connections": {
+                "library|input_1": {
+                    "id": 0, 
+                    "output_name": "output"
+                }, 
+                "library|input_2": {
+                    "id": 1, 
+                    "output_name": "output"
+                }, 
+                "reference_genome|own_file": {
+                    "id": 2, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Bowtie2", 
+            "outputs": [
+                {
+                    "name": "output_unaligned_reads_l", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output_aligned_reads_l", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output_aligned_reads_r", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output_unaligned_reads_r", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output", 
+                    "type": "bam"
+                }, 
+                {
+                    "name": "output_sam", 
+                    "type": "sam"
+                }, 
+                {
+                    "name": "mapping_stats", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 230, 
+                "top": 10
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.3.4.2", 
+            "tool_shed_repository": {
+                "changeset_revision": "17062a0decb7", 
+                "name": "bowtie2", 
+                "owner": "devteam", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"sam_options\": \"{\\\"sam_options_selector\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"library\": \"{\\\"aligned_file\\\": \\\"true\\\", \\\"unaligned_file\\\": \\\"true\\\", \\\"input_2\\\": null, \\\"__current_case__\\\": 1, \\\"input_1\\\": null, \\\"type\\\": \\\"paired\\\", \\\"paired_options\\\": {\\\"paired_options_selector\\\": \\\"no\\\", \\\"__current_case__\\\": 1}}\", \"reference_genome\": \"{\\\"source\\\": \\\"history\\\", \\\"__current_case__\\\": 1, \\\"own_file\\\": null}\", \"rg\": \"{\\\"rg_selector\\\": \\\"do_not_set\\\", \\\"__current_case__\\\": 3}\", \"save_mapping_stats\": \"\\\"false\\\"\", \"analysis_type\": \"{\\\"analysis_type_selector\\\": \\\"simple\\\", \\\"presets\\\": \\\"--very-fast\\\", \\\"__current_case__\\\": 0}\", \"chromInfo\": \"\\\"/usr/local/projects/galaxy_data/tool_data/shared/ucsc/chrom/?.len\\\"\"}", 
+            "tool_version": "2.3.4.2", 
+            "type": "tool", 
+            "uuid": "4b92b2d1-b395-4d21-ad66-8458e2f1d92f", 
+            "workflow_outputs": []
+        }
+    }, 
+    "uuid": "d0b13a08-31ca-4479-ad73-7af62fed174e"
+}

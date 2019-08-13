@@ -1,0 +1,537 @@
+[
+	{
+		"info": null,
+		"tool_id": "upload1",
+		"update_time": "2019-07-29T18:13:00.085448",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "1.1.6",
+		"input_dataset_mapping": {
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "python '/cvmfs/main.galaxyproject.org/galaxy/tools/data_source/upload.py' /cvmfs/main.galaxyproject.org/galaxy /galaxy-repl/main/jobdir/024/429/24429093/registry.xml /galaxy-repl/main/jobdir/024/429/24429093/upload_params.json 33202609:/galaxy-repl/main/jobdir/024/429/24429093/dataset_33202609_files:/galaxy-repl/main/files/033/202/dataset_33202609.dat",
+		"tool_stderr": "",
+		"job_stderr": "",
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"output0": [
+				"cc52456503aa3520e4944b3a51ed8666"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T18:07:47.504580",
+		"params": {
+			"files": [
+				{
+					"to_posix_lines": "Yes",
+					"file_data": "/galaxy-repl/main/scratch2/532c1c846103c509-1564423665985-208893",
+					"space_to_tab": null,
+					"uuid": null,
+					"dbkey": "?",
+					"file_type": "fastqsanger",
+					"auto_decompress": "Yes",
+					"url_paste": "",
+					"__index__": 0,
+					"ftp_files": null,
+					"NAME": "1G_data.fastq"
+				}
+			],
+			"force_composite": "false",
+			"paramfile": "/galaxy-repl/main/scratch2/upload_params_HVHf_v",
+			"file_type": "fastqsanger",
+			"files_metadata": {
+				"file_type": "fastqsanger",
+				"__current_case__": 470
+			},
+			"dbkey": "?",
+			"file_count": "1"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa3520b53547eba331c58e",
+		"job_stdout": ""
+	},
+	{
+		"info": null,
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bam_to_sam/bam_to_sam/2.0.1",
+		"update_time": "2019-07-29T18:32:55.593995",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "2.0.1",
+		"input_dataset_mapping": {
+			"input1": [
+				"cc52456503aa3520d2b30d6cee60b4a3"
+			]
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "samtools view -o '/galaxy-repl/main/files/033/202/dataset_33202899.dat' -h '/galaxy-repl/main/files/033/202/dataset_33202840.dat'",
+		"tool_stderr": "",
+		"job_stderr": "",
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"output1": [
+				"cc52456503aa3520378d37a79bc156dd"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T18:29:15.955783",
+		"params": {
+			"header": "-h",
+			"input1": {
+				"values": [
+					{
+						"src": "hda",
+						"id": "cc52456503aa3520d2b30d6cee60b4a3"
+					}
+				]
+			},
+			"chromInfo": "/cvmfs/data.galaxyproject.org/managed/len/ucsc/hg19.len",
+			"dbkey": "hg19"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa3520767b7b09b1f4e176",
+		"job_stdout": ""
+	},
+	{
+		"info": null,
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+		"update_time": "2019-07-29T17:53:24.181511",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "0.72+galaxy1",
+		"input_dataset_mapping": {
+			"input_file": [
+				"cc52456503aa3520e2adff4347ed83b3"
+			]
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "ln -s '/galaxy-repl/main/files/033/202/dataset_33202331.dat' '1G_data_fastq' && mkdir -p '/galaxy-repl/main/jobdir/024/428/24428939/dataset_33202355_files' && fastqc --outdir '/galaxy-repl/main/jobdir/024/428/24428939/dataset_33202355_files'    --quiet --extract  --kmers 7 -f 'fastq' '1G_data_fastq'  && cp '/galaxy-repl/main/jobdir/024/428/24428939/dataset_33202355_files'/*/fastqc_data.txt output.txt && cp '/galaxy-repl/main/jobdir/024/428/24428939/dataset_33202355_files'/*\\.html output.html",
+		"tool_stderr": "Picked up _JAVA_OPTIONS: -Djava.io.tmpdir=/galaxy-repl/main/jobdir/024/428/24428939/_job_tmp -Xmx7g  -Xms256m\n",
+		"job_stderr": "",
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"html_file": [
+				"cc52456503aa3520f46a6edee60aff8c"
+			],
+			"text_file": [
+				"cc52456503aa352052d4e1a7dd301929"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T17:52:26.624507",
+		"params": {
+			"min_length": "",
+			"kmers": "7",
+			"limits": null,
+			"input_file": {
+				"values": [
+					{
+						"src": "hda",
+						"id": "cc52456503aa3520e2adff4347ed83b3"
+					}
+				]
+			},
+			"chromInfo": "/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len",
+			"dbkey": "?",
+			"contaminants": null,
+			"adapters": null,
+			"nogroup": "false"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa3520a50a6140850ef574",
+		"job_stdout": ""
+	},
+	{
+		"info": null,
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtools_idxstats/samtools_idxstats/2.0.1",
+		"update_time": "2019-07-29T18:33:09.592058",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "2.0.1",
+		"input_dataset_mapping": {
+			"input": [
+				"cc52456503aa3520d2b30d6cee60b4a3"
+			]
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "ln -f -s '/galaxy-repl/main/files/_metadata_files/002/563/metadata_2563735.dat' '/galaxy-repl/main/files/033/202/dataset_33202840.dat.bai' &&  samtools idxstats '/galaxy-repl/main/files/033/202/dataset_33202840.dat' > '/galaxy-repl/main/files/033/202/dataset_33202901.dat'",
+		"tool_stderr": "",
+		"job_stderr": "",
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"output": [
+				"cc52456503aa35204ad4dfc595668f75"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T18:29:38.514108",
+		"params": {
+			"input": {
+				"values": [
+					{
+						"src": "hda",
+						"id": "cc52456503aa3520d2b30d6cee60b4a3"
+					}
+				]
+			},
+			"chromInfo": "/cvmfs/data.galaxyproject.org/managed/len/ucsc/hg19.len",
+			"dbkey": "hg19"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa3520e4fe82c98fc8a747",
+		"job_stdout": ""
+	},
+	{
+		"info": null,
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SortSam/2.18.2.1",
+		"update_time": "2019-07-29T18:25:43.010234",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "2.18.2.1",
+		"input_dataset_mapping": {
+			"inputFile": [
+				"cc52456503aa35204fcc8818fc0c5107"
+			]
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "_JAVA_OPTIONS=${_JAVA_OPTIONS:-'-Xmx2048m -Xms256m'} && export _JAVA_OPTIONS &&   ln -f -s '/galaxy-repl/main/files/033/202/dataset_33202761.dat' 'Map_with_BWA-MEM_on_data_5__mapped_reads_in_BAM_format_' &&  picard SortSam INPUT='Map_with_BWA-MEM_on_data_5__mapped_reads_in_BAM_format_' OUTPUT='/galaxy-repl/main/files/033/202/dataset_33202840.dat' SORT_ORDER=\"coordinate\" QUIET=true VERBOSITY=ERROR  `if [ -n \"$TMPDIR\" ] ; then echo 'TMP_DIR=$TMPDIR' ; else if [ -n \"$TEMP\" ] ; then echo 'TMP_DIR=$TEMP' ; fi ; fi` VALIDATION_STRINGENCY=LENIENT",
+		"tool_stderr": "Picked up _JAVA_OPTIONS: -Djava.io.tmpdir=/galaxy-repl/main/jobdir/024/429/24429262/_job_tmp -Xmx7g  -Xms256m\n13:25:32.177 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/cvmfs/main.galaxyproject.org/deps/_conda/pkgs/picard-2.18.2-py36_0/share/picard-2.18.2-0/picard.jar!/com/intel/gkl/native/libgkl_compression.so\n",
+		"job_stderr": "",
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"outFile": [
+				"cc52456503aa3520d2b30d6cee60b4a3"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T18:24:45.102897",
+		"params": {
+			"sort_order": "coordinate",
+			"chromInfo": "/cvmfs/data.galaxyproject.org/managed/len/ucsc/hg19.len",
+			"validation_stringency": "LENIENT",
+			"dbkey": "hg19",
+			"inputFile": {
+				"values": [
+					{
+						"src": "hda",
+						"id": "cc52456503aa35204fcc8818fc0c5107"
+					}
+				]
+			}
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa35206a288d2112102470",
+		"job_stdout": ""
+	},
+	{
+		"info": null,
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.1",
+		"update_time": "2019-07-29T18:24:15.652913",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "0.7.17.1",
+		"input_dataset_mapping": {
+			"fastq_input1": [
+				"cc52456503aa3520e4944b3a51ed8666"
+			]
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": null,
+		"tool_stderr": "[main] Version: 0.7.17-r1188\n[main] CMD: bwa mem -t 10 -v 1 /cvmfs/data.galaxyproject.org/byhand/hg19/hg19full/bwa_index_v0.7.10-r789/hg19full.fa /jetstream/scratch0/main/jobs/24429199/inputs/dataset_33202609.dat\n[main] Real time: 115.408 sec; CPU: 6.655 sec\n[bam_sort_core] merging from 0 files and 10 in-memory blocks...\n",
+		"job_stderr": null,
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"bam_output": [
+				"cc52456503aa35204fcc8818fc0c5107"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T18:16:58.861022",
+		"params": {
+			"dbkey": "?",
+			"__job_resource": {
+				"__current_case__": 0,
+				"__job_resource__select": "no"
+			},
+			"rg": {
+				"rg_selector": "do_not_set",
+				"__current_case__": 3
+			},
+			"fastq_input": {
+				"__current_case__": 1,
+				"fastq_input_selector": "single",
+				"fastq_input1": {
+					"values": [
+						{
+							"src": "hda",
+							"id": "cc52456503aa3520e4944b3a51ed8666"
+						}
+					]
+				}
+			},
+			"analysis_type": {
+				"analysis_type_selector": "illumina",
+				"__current_case__": 0
+			},
+			"reference_source": {
+				"ref_file": "hg19",
+				"reference_source_selector": "cached",
+				"__current_case__": 0
+			},
+			"chromInfo": "/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa352019a22ca9ddf3498e",
+		"job_stdout": null
+	},
+	{
+		"info": "Job output deleted by user before job completed.",
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.1",
+		"update_time": "2019-07-29T18:05:32.259770",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "0.7.17.1",
+		"input_dataset_mapping": {
+			"fastq_input1": [
+				"cc52456503aa3520e2adff4347ed83b3"
+			]
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "set -o | grep -q pipefail && set -o pipefail;     bwa mem -t \"${GALAXY_SLOTS:-1}\" -v 1                '/cvmfs/data.galaxyproject.org/byhand/hg19/hg19full/bwa_index_v0.7.10-r789/hg19full.fa' '/jetstream/scratch0/main/jobs/24428947/inputs/dataset_33202331.dat'  | samtools sort -@${GALAXY_SLOTS:-2} -O bam -o '/jetstream/scratch0/main/jobs/24428947/outputs/dataset_33202366.dat'",
+		"tool_stderr": null,
+		"job_stderr": null,
+		"exit_code": null,
+		"output_dataset_mapping": {
+			"bam_output": [
+				"cc52456503aa35206f2850f9df9b6228"
+			]
+		},
+		"state": "deleted",
+		"create_time": "2019-07-29T17:53:47.946449",
+		"params": {
+			"dbkey": "?",
+			"__job_resource": {
+				"__current_case__": 0,
+				"__job_resource__select": "no"
+			},
+			"rg": {
+				"rg_selector": "do_not_set",
+				"__current_case__": 3
+			},
+			"fastq_input": {
+				"__current_case__": 1,
+				"fastq_input_selector": "single",
+				"fastq_input1": {
+					"values": [
+						{
+							"src": "hda",
+							"id": "cc52456503aa3520e2adff4347ed83b3"
+						}
+					]
+				}
+			},
+			"analysis_type": {
+				"analysis_type_selector": "illumina",
+				"__current_case__": 0
+			},
+			"reference_source": {
+				"ref_file": "hg19",
+				"reference_source_selector": "cached",
+				"__current_case__": 0
+			},
+			"chromInfo": "/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": null,
+		"encoded_id": "cc52456503aa352003c43c2e9bb4c61c",
+		"job_stdout": null
+	},
+	{
+		"info": null,
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+		"update_time": "2019-07-29T18:14:29.678912",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "0.72+galaxy1",
+		"input_dataset_mapping": {
+			"input_file": [
+				"cc52456503aa3520e4944b3a51ed8666"
+			]
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "ln -s '/galaxy-repl/main/files/033/202/dataset_33202609.dat' '1G_data_fastq' && mkdir -p '/galaxy-repl/main/jobdir/024/429/24429134/dataset_33202664_files' && fastqc --outdir '/galaxy-repl/main/jobdir/024/429/24429134/dataset_33202664_files'    --quiet --extract  --kmers 7 -f 'fastq' '1G_data_fastq'  && cp '/galaxy-repl/main/jobdir/024/429/24429134/dataset_33202664_files'/*/fastqc_data.txt output.txt && cp '/galaxy-repl/main/jobdir/024/429/24429134/dataset_33202664_files'/*\\.html output.html",
+		"tool_stderr": "Picked up _JAVA_OPTIONS: -Djava.io.tmpdir=/galaxy-repl/main/jobdir/024/429/24429134/_job_tmp -Xmx7g  -Xms256m\n",
+		"job_stderr": "",
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"html_file": [
+				"cc52456503aa3520e179cbaada805e4b"
+			],
+			"text_file": [
+				"cc52456503aa3520dbd5f7991c0bcc98"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T18:13:51.308443",
+		"params": {
+			"min_length": "",
+			"kmers": "7",
+			"limits": null,
+			"input_file": {
+				"values": [
+					{
+						"src": "hda",
+						"id": "cc52456503aa3520e4944b3a51ed8666"
+					}
+				]
+			},
+			"chromInfo": "/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len",
+			"dbkey": "?",
+			"contaminants": null,
+			"adapters": null,
+			"nogroup": "false"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa3520a5f62e8a3a5ead74",
+		"job_stdout": ""
+	},
+	{
+		"info": null,
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtools_flagstat/samtools_flagstat/2.0.1",
+		"update_time": "2019-07-29T18:33:21.411247",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "2.0.1",
+		"input_dataset_mapping": {
+			"input1": [
+				"cc52456503aa3520d2b30d6cee60b4a3"
+			]
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "samtools flagstat '/galaxy-repl/main/files/033/202/dataset_33202840.dat' > '/galaxy-repl/main/files/033/202/dataset_33202915.dat'",
+		"tool_stderr": "",
+		"job_stderr": "",
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"output1": [
+				"cc52456503aa3520f55d5f1a6decb47c"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T18:30:04.030016",
+		"params": {
+			"input1": {
+				"values": [
+					{
+						"src": "hda",
+						"id": "cc52456503aa3520d2b30d6cee60b4a3"
+					}
+				]
+			},
+			"chromInfo": "/cvmfs/data.galaxyproject.org/managed/len/ucsc/hg19.len",
+			"dbkey": "hg19"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa352000ddb1076fce5576",
+		"job_stdout": ""
+	},
+	{
+		"info": null,
+		"tool_id": "upload1",
+		"update_time": "2019-07-29T17:52:02.096666",
+		"input_dataset_collection_mapping": {
+		},
+		"tool_version": "1.1.6",
+		"input_dataset_mapping": {
+		},
+		"output_dataset_collection_mapping": {
+		},
+		"traceback": null,
+		"command_line": "python '/cvmfs/main.galaxyproject.org/galaxy/tools/data_source/upload.py' /cvmfs/main.galaxyproject.org/galaxy /galaxy-repl/main/jobdir/024/428/24428925/registry.xml /galaxy-repl/main/jobdir/024/428/24428925/upload_params.json 33202331:/galaxy-repl/main/jobdir/024/428/24428925/dataset_33202331_files:/galaxy-repl/main/files/033/202/dataset_33202331.dat",
+		"tool_stderr": "",
+		"job_stderr": "",
+		"exit_code": 0,
+		"output_dataset_mapping": {
+			"output0": [
+				"cc52456503aa3520e2adff4347ed83b3"
+			]
+		},
+		"state": "ok",
+		"create_time": "2019-07-29T17:50:56.784077",
+		"params": {
+			"files": [
+				{
+					"to_posix_lines": "Yes",
+					"file_data": "/galaxy-repl/main/scratch2/532c1c846103c509-1564422654079-208893",
+					"space_to_tab": null,
+					"uuid": null,
+					"dbkey": "?",
+					"file_type": "fastqsanger",
+					"auto_decompress": "Yes",
+					"url_paste": "",
+					"__index__": 0,
+					"ftp_files": null,
+					"NAME": "1G_data.fastq"
+				}
+			],
+			"force_composite": "false",
+			"paramfile": "/galaxy-repl/main/scratch2/upload_params_2EDQJF",
+			"file_type": "fastqsanger",
+			"files_metadata": {
+				"file_type": "fastqsanger",
+				"__current_case__": 470
+			},
+			"dbkey": "?",
+			"file_count": "1"
+		},
+		"implicit_output_dataset_collection_mapping": {
+		},
+		"model_class": "Job",
+		"tool_stdout": "",
+		"encoded_id": "cc52456503aa35209e87246efbb9dad7",
+		"job_stdout": ""
+	}
+]

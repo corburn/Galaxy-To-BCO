@@ -1,0 +1,73 @@
+[{
+    "input_list": [
+        {
+            "description": "", 
+            "name": "o580507-shortReads_1.fastq"
+        }
+    ], 
+    "name": "Input dataset", 
+    "output_list": [], 
+    "step_number": 0, 
+    "tool_id": null, 
+    "tool_version": null
+},{
+    "input_list": [
+        {
+            "description": "", 
+            "name": "o580507-shortReads_2.fastq"
+        }
+    ], 
+    "name": "Input dataset", 
+    "output_list": [], 
+    "step_number": 1, 
+    "tool_id": null, 
+    "tool_version": null
+},{
+    "input_list": [
+        {
+            "description": "", 
+            "name": "NC_004102.fasta"
+        }
+    ], 
+    "name": "Input dataset", 
+    "output_list": [], 
+    "step_number": 2, 
+    "tool_id": null, 
+    "tool_version": null
+},{
+    "input_list": [], 
+    "name": "Bowtie2", 
+    "output_list": [
+        {
+            "name": "output_unaligned_reads_l.fastqsanger", 
+            "type": "fastqsanger"
+        }, 
+        {
+            "name": "output_aligned_reads_l.fastqsanger", 
+            "type": "fastqsanger"
+        }, 
+        {
+            "name": "output_aligned_reads_r.fastqsanger", 
+            "type": "fastqsanger"
+        }, 
+        {
+            "name": "output_unaligned_reads_r.fastqsanger", 
+            "type": "fastqsanger"
+        }, 
+        {
+            "name": "output.bam", 
+            "type": "bam"
+        }, 
+        {
+            "name": "output_sam.sam", 
+            "type": "sam"
+        }, 
+        {
+            "name": "mapping_stats.txt", 
+            "type": "txt"
+        }
+    ], 
+    "step_number": 3, 
+    "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.3.4.2", 
+    "tool_version": "2.3.4.2"
+}]
