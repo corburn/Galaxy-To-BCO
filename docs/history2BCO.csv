@@ -1,0 +1,62 @@
+﻿BCO Field Name,HistoryFile,field,Notes
+"    bco_id: ,",NA,Default/option,should be a url. Maybe for the history file?
+    bco_spec_version:,NA,Default/option,user defined
+    etag: ,datasets_attrs.txt,history_encoded_id,Maybe we could use the UUID for Galaxy history fileand the url?
+    provenance_domain: {,###############,###############,
+"        name: ,",history_attrs.txt,name,
+"        version: ,",NA,user input/coice?,user input
+"        review: [],",NA,?,user input
+"        derived_from: ,",NA,,
+        obsolete_after: ,NA,,user input
+        embargo: {,###############,###############,"Does Galaxy have anykind of ""embargo"" options ??"
+"            start_time: ,",NA,,
+            end_time: ,NA,,
+"        },",###############,###############,
+"        created: ,",history_attrs.txt,create_time,
+"        modified: ,",history_attrs.txt,update_time,
+"        contributors: [],",###############,###############,
+name,user/information,Public name,Can we parse the user info for who ever created the history file?
+orcid,Na,,user input
+affiliation,Na,,user input
+email,user/information,Email address,
+        license: ,NA,User input/coice?,"Offer a few different licences, and then allow free text as well"
+"    },",###############,###############,
+"    usability_domain: [],",history_attrs.txt,annotation,Mybe include a blurb about what is disirable here…
+"    extension_domain: [],",NA,?,
+    description_domain: {,###############,###############,
+"        keywords: [],",history_attrs.txt,tags,
+"        xref: [],",?,?,
+"        platform: [],",NA,Galaxy/auto?,
+        pipeline_steps: [],datasets/Galaxy-Workflow-Workflow_constructed_from_history__**.py,jsonParse-workflow.py,use the script already in hand to do this…
+"    },",###############,###############,
+    execution_domain: {,###############,###############,
+"        script: [],",Link to history zip file? ,,
+"        script_driver: ,",3,,
+"        software_prerequisites: [],",,,
+                name,Galaxy-Workflow-Workflow_constructed_from_history__**.py,steps.#.name,"if the ""steps.#.type"" is a tool OR not a ""data_input""?"
+                version:,Galaxy-Workflow-Workflow_constructed_from_history__**.py,steps.#.tool_version,"if the ""steps.#.type"" is a tool OR not a ""data_input""?"
+                    access_time,,,
+                    uri,Galaxy-Workflow-Workflow_constructed_from_history__**.py,tool_id,
+,,,
+,,,
+"        external_data_endpoints: [],",jobs_attrs.json,params.files.ftp_files ,
+        environment_variables: {},??,??,I feel this is an important set of values but am not sure how to get it yet… Maybe from the galaxy config files?
+"    },",###############,###############,
+"    parametric_domain: [],",jobs_attrs.txt,">>> for i in jobs:
+...     if 'files' in i['params'].keys(): print 'no'
+...     else:
+...         for p in i['params'].keys():
+...             print p, i['params'][p]",
+    io_domain: {,,,
+"        input_subdomain: [],",datasets_attrs.txt,if i['designation'] = null,
+                    access_time:  ,datasets_attrs.txt,update_time,
+                    uri: ,datasets_attrs.txt,uuid or file_name+server info?,
+                    filename:,datasets_attrs.txt,name,
+        output_subdomain: [],datasets_attrs.txt,if i['designation'] = output*,
+                mediatype,datasets_attrs.txt,file_name.split('.')[-1],
+                    access_time:  ,datasets_attrs.txt,update_time,
+                    uri: ,datasets_attrs.txt,uuid or file_name+server info?,
+                    filename:,datasets_attrs.txt,file_name,
+    error_domain: {,,,
+"        empirical_error: {},",NA,,
+        algorithmic_error: {},NA,,
