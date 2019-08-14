@@ -16,8 +16,8 @@ https://github.com/biocompute-objects/
 
 [![Gitter](https://badges.gitter.im/biocompute-objects/community.svg)](https://gitter.im/biocompute-objects/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 ## Purpose
-- [] Map items in the Galaxy schema for history and workflow objects to the [BioCompute Object Schema](https://github.com/biocompute-objects/BCO_Specification/releases/latest)
-- [] Develop tools to automaticlly generate as many values as possible for a BioCompute Object
+- Map items in the Galaxy schema for history and workflow objects to the [BioCompute Object Schema](https://github.com/biocompute-objects/BCO_Specification/releases/latest)
+- Develop tools to automaticlly generate as many values as possible for a BioCompute Object
 
 ## Support, Community and Contributing
 
