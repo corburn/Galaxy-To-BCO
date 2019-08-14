@@ -5,7 +5,7 @@ GitHub repository for development of tools to build a BCO on the [Galaxy platfor
 
 This version: [draft-0.2.0](https://github.com/biocompute-objects/Galaxy-To-BCO/tree/dev)
 
-Previous version: [v1.3.1](https://github.com/biocompute-objects/Galaxy-To-BCO/releases/tag/0.1.0)
+Previous version: [0.1.0](https://github.com/biocompute-objects/Galaxy-To-BCO/releases/tag/0.1.0)
 
 BioCompute Partnership: https://biocomputeobject.org
 
