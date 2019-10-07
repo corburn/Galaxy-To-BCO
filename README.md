@@ -13,6 +13,6 @@ There are two steps in the process of exporting BCO :
 > For details on using Galaxy for bioinformatics analysis, workflows and histories see https://galaxyproject.org/learn/.
 
 <br/>
-- Second, locate the "Convert Galaxy workflow to BCO" tool from the list on the left pane of Galaxy. When selected, the middle pane of Galaxy will show the converter interface and it will also automatically recognise the **.json file** as input. The "Execute" button will initiate the conversion:  <br/><br/><br/> ![](docs/JSON2BCO.png)<br/><br/><br/><br/>
+- Second, locate the "Convert Galaxy workflow to BCO" tool from the list on the left pane of Galaxy. When selected, the middle pane of Galaxy will show the converter interface and it will also automatically recognise the **.json file** as input. The "Execute" button will initiate the conversion: <br/> ![](docs/JSON2BCO.png)<br/><br/><br/>
 
 - Finally, following completion of the conversion, the BCO object will appear in the Galaxy history where it can be exported and shared, using the "Download" button in the Galaxy history as shown in the image below: <br/><br/> ![](docs/BCOconverted.png)
