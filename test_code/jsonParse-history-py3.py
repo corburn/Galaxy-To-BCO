@@ -61,7 +61,8 @@ def iterdict(schema):
 
 #______________________________________________________________________________#
 def create_arg_parser():
-    """"Creates and returns the ArgumentParser object. An absolute path for the 
+    """"
+    Creates and returns the ArgumentParser object. An absolute path for the 
     input directory is required. 
     TODO: The output is path is optional now, and does not work yet
     """
@@ -80,7 +81,8 @@ def create_arg_parser():
     return parser
 #______________________________________________________________________________#
 def read_galaxy_history( path ):
-    """takes an abosolute path argument
+    """
+    takes an abosolute path argument
     opens files contained in the Galaxy-History *.zip
     returns a JSON of each of the coorisponding files
     """
@@ -134,7 +136,8 @@ def read_galaxy_history( path ):
 
 #______________________________________________________________________________#
 def load_schema( url ):
-    """Load JSON Schema from the repository by using URL or local file using
+    """
+    Load JSON Schema from the repository by using URL or local file using
     absolute path and 'file:' prefix
     Walk through the definitions ensuring they all *a* default
     Use the extended validator to fill in `data` with default values from the 
@@ -160,7 +163,9 @@ def load_schema( url ):
 
 #______________________________________________________________________________#
 def parse_top( dic1, dic2 ):
-    """Pulls the top level fields from the BCO
+    """
+    Pulls the top level fields from the BCO
+    TODO: Checksum to e-tag; implement e-tag creation; 
     """
 
     his = dic2
@@ -176,6 +181,8 @@ def parse_top( dic1, dic2 ):
 def parse_prov( dic, history ):
     """
     Reads the Prov dom feilds for a GalaxyBCO
+    TODO: How should the following be created/populated: Version; review; 
+    contributors; derrived from; obsolete and embargo; license?
     """
 
     prov = dic['provenance_domain']
@@ -190,7 +197,10 @@ def parse_prov( dic, history ):
     return dic
 #______________________________________________________________________________#
 def parse_usability( bco, history ):
-    """Uses the Galaxy History annotation feild to populate the useablity domain
+    """
+    Uses the Galaxy History annotation feild to populate the useablity domain
+    TODO: the history['annotation'] was not populated in the examples. Find out 
+    if this works as thought. 
     """
 
     bco['usability_domain'] = history['annotation']
@@ -199,55 +209,78 @@ def parse_usability( bco, history ):
 #______________________________________________________________________________#
 def parse_extension( dic ):
     """
+    TODO: this is a placeholder for now. Im not sure how we could/should use 
+    this domain in Galaxy
     """
 
 #______________________________________________________________________________#
-def parse_description( bco, workflow,  ):
+def parse_description( bco, workflow, history, data_attrs ):
     """ 
-    description based on workflow
-
+    pipeline description based on workflow file
+    TODO: xrefs? Tags should go to keywords
+    
     """
     
+    try: keywords = history['tags']
+    except: keywords = []
+    
+    data = data_attrs
+    
     description_domain = {
-            'keywords': [],
+            'keywords': keywords,
             'xref': [],
             'platform': ['Galaxy'],
             'pipeline_steps': []
         }
-        
+
     for i in range(len(workflow['steps'])): 
         if workflow['steps'][str(i)]['tool_id'] == None: 
             pass
         else:
-            
+            count = 0
+            #list of 'input_connections' for tool
+            input_connections = workflow['steps'][str(i)]['input_connections']
+            #iterate through the list of 'input_connections' for tool
+            input_list, output_list =[], []
+            for c in input_connections.keys():
+                input_name = c
+                identity = str(input_connections[c]['id'])
+                uri = workflow['steps'][identity]['uuid']
+#                print(input_name, identity, uri) #Test print for values
+                input_list.append(
+                    {
+                        'filename': input_name,
+                        'uri': uri,
+                        'access_time': data[int(identity)]['create_time']
+                    }
+                )
+            outputs = workflow['steps'][str(i)]['outputs']
+            for o in outputs:
+                out_id = o['name']
+                for obj in data_attrs:
+                    if obj['designation'] == o['name']: 
+                        out_name = obj['file_name']
+                        try: uri = obj['dataset_uuid']
+                        except: uri = obj['uuid']
+                        access = obj['update_time']
+                output_list.append(
+                    {
+                        'filename': out_name,
+                        'uri': uri,
+                        'access_time': access
+                    }
+                )
             description_domain['pipeline_steps'].append(
                 {
                     'step_number': i, 
                     'name': workflow['steps'][str(i)]['name'], 
-                    'description': '', 
-                    'version': workflow['steps'][str(i)]['tool_version']
+                    'description': '',
+                    'version': workflow['steps'][str(i)]['tool_version'],
+                    'input_list' : input_list,
+                    'output_list' : output_list
                 }
             )
-                #     'prerequisite': [
-                #         {
-                #             'name': '',
-                #             'uri':{
-                #                 'uri':'',
-                #                 'access_time':''
-                #             }
-                #         }
-                #     ],
-                #     'output_list':[
-                #         {
-                #             'name': '',
-                #             'uri':{
-                #                 'uri':'',
-                #                 'access_time':''
-                #             }
-                #         }
-                #     ]
-                # }
-            # )
+            count =+ 1
 
     bco['description_domain'] = description_domain
 
@@ -255,12 +288,14 @@ def parse_description( bco, workflow,  ):
 #______________________________________________________________________________#
 def parse_execution( dic ):
     """
+    sd
     """
 
     exe = dic
 #______________________________________________________________________________#
 def parse_param( bco, jobs ):
     """
+    Using jobs_attrs.txt to create the parametric domain
     """
 
     parametric_domain =[]
@@ -280,7 +315,7 @@ def parse_param( bco, jobs ):
 #______________________________________________________________________________#
 def parse_io( bco, data_attrs ):
     """
-uses jobs to oparse 
+    uses jobs to parse IO
     """
 
     data = data_attrs
@@ -312,6 +347,7 @@ uses jobs to oparse
 #______________________________________________________________________________#
 def parse_err( dic ):
     """
+    This is an enigma.... 
     """
 
     err = dic
@@ -325,13 +361,11 @@ def main( ):
     bco = parse_usability(bco, history)
     bco = parse_prov(bco, history)
     bco = parse_io(bco, data_attrs)
-#    bco = parse_param(bco, jobs)
-    parse_description(bco, workflow)
+    bco = parse_param(bco, jobs)
+    parse_description(bco, workflow, history, data_attrs)
 
     bco = parse_top(bco, history)
     print(json.dumps(bco, indent=4))
-
-    #print(parsed_args.schema)
 
 #______________________________________________________________________________#
 if __name__ == "__main__":
