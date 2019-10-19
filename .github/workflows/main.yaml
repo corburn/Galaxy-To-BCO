@@ -43,5 +43,9 @@ jobs:
         #JAVA_HOME
       run: |
         pip install planemo
-        planemo conda_init
+        planemo conda_init --conda_prefix=$HOME/conda --conda_exec=$HOME/conda/bin/conda
         export PATH="$PLANEMO_CONDA_PREFIX/bin:$PATH"
+
+#--conda_prefix DIRECTORY        Conda prefix to use for conda dependency commands.
+#--conda_exec FILE               Location of conda executable.
+
