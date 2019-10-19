@@ -77,7 +77,7 @@ def create_arg_parser():
     parser.add_argument(
         "-s",
         "--schema",
-        default="file:/Users/hadley/GitHub/BCO_Specification/schemas/biocomputeobject.json",
+        default='https://raw.githubusercontent.com/biocompute-objects/BCO_Specification/1.3.1/schemas/biocomputeobject.json',
         help="The URL that contains the BCO schema.",
     )
 

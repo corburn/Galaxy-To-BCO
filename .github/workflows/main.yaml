@@ -36,16 +36,24 @@ jobs:
       run: |
         pip install pytest
         pytest
+    - run: |
+        python test_code/jsonParse-history-py3.py Galaxy-History-BCO-Test/
     - env:
         GALAXY_REPO: https://github.com/galaxyproject/galaxy
         GALAXY_RELEASE: release_19.05
         PLANEMO_CONDA_PREFIX: "$HOME/conda"
         #JAVA_HOME
+      # planemo 0.62.1 'planemo conda_init' appeared to fail without '--conda_prefix'
+      # because $HOME was not expanded:
+      # '$HOME/conda/bin/conda' install -y --override-channels --channel iuc --channel conda-forge --channel bioconda --channel defaults conda=4.3.33 conda-build=2.1.18
+      # FileNotFoundError: [Errno 2] No such file or directory: '$HOME/conda/bin/conda'
       run: |
         pip install planemo
         #planemo conda_init --conda_prefix=$HOME/conda --conda_exec=$HOME/conda/bin/conda
         planemo conda_init --conda_prefix=$HOME/conda
         export PATH="$PLANEMO_CONDA_PREFIX/bin:$PATH"
+        planemo lint
+        planemo test
 
 #--conda_prefix DIRECTORY        Conda prefix to use for conda dependency commands.
 #--conda_exec FILE               Location of conda executable.
